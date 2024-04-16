@@ -32,7 +32,7 @@ Poke.dex uses the [PokeAPI](https://pokeapi.co/) to retrieve the Pokémon data.
 ## FAQ
 
 #### Is this project serious?
-Absolutely. This is more-or-less how I've been doing Android app for around 10 years, including ones used by millions of people.
+Absolutely. This is more-or-less how I've been doing Android apps for around 10 years, including ones used by millions of people.
 
 #### Have you tried { technology.name }?
 Probably not. I'm not very open to innovation in programming because most of the current "innovations" involve piling ever more abstraction layers on top of each other for no other benefit than to say "my code looks beautiful" or "this project can be worked on even by most junior of developers who need not understand the abstraction layers beneath the topmost one".
