@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="AnimatedLabeledProgressBar">
+		<attr name="android:progress" format="integer"/>
+		<attr name="android:max" format="integer"/>
+		<attr name="android:color" format="color"/>
+		<attr name="android:colorBackground" format="color"/>
+		<attr name="android:numbersTextColor" format="color"/>
+		<attr name="android:numbersInnerTextColor" format="color"/>
+	</declare-styleable>
+</resources>

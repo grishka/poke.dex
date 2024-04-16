@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="window_background">#2b292b</color>
+	<color name="navigation_bar_background">#aa2b292b</color>
+	<color name="ripple">#40ffffff</color>
+	<color name="stat_bar_bg">#000</color>
+</resources>

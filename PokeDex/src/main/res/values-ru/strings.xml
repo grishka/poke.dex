@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="weight">Вес</string>
+	<string name="height">Рост</string>
+	<string name="weight_kg">%s кг</string>
+	<string name="height_m">%s м</string>
+</resources>

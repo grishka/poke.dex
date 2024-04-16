@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.grishka.appkit.views.FragmentRootLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="?android:windowBackground">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ScrollView
+			android:id="@+id/scroller"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<LinearLayout
+				android:id="@+id/scrollable_content"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<FrameLayout
+					android:id="@+id/image_wrap"
+					android:layout_width="match_parent"
+					android:layout_height="250dp"
+					android:padding="16dp"
+					android:elevation="3dp"
+					tools:background="#000">
+
+					<ImageView
+						android:id="@+id/image"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:layout_gravity="center"
+						android:scaleType="fitCenter"/>
+
+				</FrameLayout>
+
+				<TextView
+					android:id="@+id/name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="16dp"
+					android:textSize="30dp"
+					android:textColor="?android:textColorPrimary"
+					android:fontFamily="sans-serif-medium"
+					android:gravity="center"
+					tools:text="Pikachu"/>
+
+				<ProgressBar
+					android:id="@+id/progress"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:layout_gravity="center_horizontal"/>
+
+				<LinearLayout
+					android:id="@+id/types"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="16dp"
+					android:layout_marginBottom="8dp"
+					android:orientation="horizontal"
+					android:baselineAligned="false"
+					android:gravity="center_horizontal"
+					android:divider="@drawable/type_spacer"
+					android:showDividers="middle"
+					android:visibility="gone"
+					tools:visibility="visible"/>
+
+				<LinearLayout
+					android:id="@+id/size_stats"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginHorizontal="16dp"
+					android:baselineAligned="false"
+					android:visibility="gone"
+					tools:visibility="visible">
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center_horizontal">
+
+						<TextView
+							android:id="@+id/weight"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textSize="25dp"
+							android:fontFamily="sans-serif-condensed-medium"
+							android:textColor="?android:textColorPrimary"
+							tools:text="12.3 kg"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textSize="14dp"
+							android:textColor="?android:textColorSecondary"
+							android:text="@string/weight"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical"
+						android:gravity="center_horizontal">
+
+						<TextView
+							android:id="@+id/height"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textSize="25dp"
+							android:fontFamily="sans-serif-condensed-medium"
+							android:textColor="?android:textColorPrimary"
+							tools:text="2 m"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textSize="14dp"
+							android:textColor="?android:textColorSecondary"
+							android:text="@string/height"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+				<TableLayout
+					android:id="@+id/stats"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="16dp"
+					android:visibility="gone"
+					tools:visibility="visible"
+					android:stretchColumns="1">
+
+					<TableRow
+						android:paddingBottom="8dp"
+						android:gravity="center_vertical">
+						<TextView
+							android:text="HP"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/hp_bar"
+							android:color="#d53a47"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+					<TableRow
+						android:paddingBottom="8dp"
+						android:gravity="center_vertical">
+						<TextView
+							android:text="ATK"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/attack_bar"
+							android:color="#ffa726"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+					<TableRow
+						android:paddingBottom="8dp"
+						android:gravity="center_vertical">
+						<TextView
+							android:text="DEF"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/defense_bar"
+							android:color="#0091ea"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+					<TableRow
+						android:paddingBottom="8dp"
+						android:gravity="center_vertical">
+						<TextView
+							android:text="S-ATK"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/special_attack_bar"
+							android:color="#ffa726"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+					<TableRow
+						android:paddingBottom="8dp"
+						android:gravity="center_vertical">
+						<TextView
+							android:text="S-DEF"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/special_defense_bar"
+							android:color="#0091ea"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+					<TableRow
+						android:gravity="center_vertical">
+						<TextView
+							android:text="SPD"
+							android:textSize="14dp"
+							android:textColor="?android:textColorPrimary"
+							android:paddingEnd="8dp"
+							android:gravity="end"/>
+						<me.grishka.examples.pokedex.views.AnimatedLabeledProgressBar
+							android:id="@+id/speed_bar"
+							android:color="#90b1c5"
+							android:colorBackground="@color/stat_bar_bg"
+							android:numbersTextColor="?android:textColorPrimary"
+							android:numbersInnerTextColor="#fff"
+							android:max="300"/>
+					</TableRow>
+
+				</TableLayout>
+
+			</LinearLayout>
+		</ScrollView>
+
+		<include layout="@layout/appkit_toolbar" />
+	</FrameLayout>
+
+</me.grishka.appkit.views.FragmentRootLinearLayout>

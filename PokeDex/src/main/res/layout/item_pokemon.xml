@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="150dp"
+	android:padding="8dp"
+	android:background="@drawable/bg_card"
+	android:outlineProvider="background"
+	android:elevation="5dp">
+
+	<ImageView
+		android:id="@+id/image"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:scaleType="fitCenter"
+		android:importantForAccessibility="no"/>
+
+	<TextView
+		android:id="@+id/name"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:textColor="?android:textColorPrimary"
+		android:textSize="14dp"
+		android:gravity="center_horizontal"
+		android:singleLine="true"
+		android:ellipsize="end"
+		tools:text="Pikachu"/>
+
+</LinearLayout>
