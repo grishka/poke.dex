@@ -7,58 +7,58 @@ import me.grishka.examples.pokedex.api.ObjectValidationException;
 import me.grishka.examples.pokedex.api.RequiredField;
 
 @AllFieldsAreRequired
-public class PokemonDetailsResponse extends BaseModel{
-	public int id;
-	public int weight;
-	public int height;
-	public List<Stat> stats;
-	public List<Type> types;
+public class PokemonDetailsResponse extends BaseModel {
+    public int id;
+    public int weight;
+    public int height;
+    public List<Stat> stats;
+    public List<Type> types;
 
-	@Override
-	public void postprocess() throws ObjectValidationException{
-		super.postprocess();
-		for(Stat stat:stats){
-			stat.postprocess();
-		}
-		for(Type type:types){
-			type.postprocess();
-		}
-	}
+    @Override
+    public void postprocess() throws ObjectValidationException {
+        super.postprocess();
+        for (Stat stat : stats) {
+            stat.postprocess();
+        }
+        for (Type type : types) {
+            type.postprocess();
+        }
+    }
 
-	public static class Stat extends BaseModel{
-		public int baseStat;
-		public int effort;
-		@RequiredField
-		public StatRef stat;
+    public static class Stat extends BaseModel {
+        public int baseStat;
+        public int effort;
+        @RequiredField
+        public StatRef stat;
 
-		@Override
-		public void postprocess() throws ObjectValidationException{
-			super.postprocess();
-			stat.postprocess();
-		}
-	}
+        @Override
+        public void postprocess() throws ObjectValidationException {
+            super.postprocess();
+            stat.postprocess();
+        }
+    }
 
-	@AllFieldsAreRequired
-	public static class StatRef extends BaseModel{
-		public String name;
-		public String url;
-	}
+    @AllFieldsAreRequired
+    public static class StatRef extends BaseModel {
+        public String name;
+        public String url;
+    }
 
-	@AllFieldsAreRequired
-	public static class Type extends BaseModel{
-		public int slot;
-		public TypeRef type;
+    @AllFieldsAreRequired
+    public static class Type extends BaseModel {
+        public int slot;
+        public TypeRef type;
 
-		@Override
-		public void postprocess() throws ObjectValidationException{
-			super.postprocess();
-			type.postprocess();
-		}
-	}
+        @Override
+        public void postprocess() throws ObjectValidationException {
+            super.postprocess();
+            type.postprocess();
+        }
+    }
 
-	@AllFieldsAreRequired
-	public static class TypeRef extends BaseModel{
-		public String name;
-		public String url;
-	}
+    @AllFieldsAreRequired
+    public static class TypeRef extends BaseModel {
+        public String name;
+        public String url;
+    }
 }

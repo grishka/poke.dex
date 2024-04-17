@@ -5,27 +5,27 @@ import android.graphics.drawable.Drawable;
 
 import me.grishka.appkit.imageloader.processing.ImageProcessingStep;
 
-public class PaletteGenerationImageProcessingStep extends ImageProcessingStep{
-	private static final PaletteGenerationImageProcessingStep INSTANCE=new PaletteGenerationImageProcessingStep();
+public class PaletteGenerationImageProcessingStep extends ImageProcessingStep {
+    private static final PaletteGenerationImageProcessingStep INSTANCE = new PaletteGenerationImageProcessingStep();
 
-	public static PaletteGenerationImageProcessingStep getInstance(){
-		return INSTANCE;
-	}
+    private PaletteGenerationImageProcessingStep() {
+        //no instance
+    }
 
-	private PaletteGenerationImageProcessingStep(){
-		//no instance
-	}
+    public static PaletteGenerationImageProcessingStep getInstance() {
+        return INSTANCE;
+    }
 
-	@Override
-	public Drawable processDrawable(Drawable drawable){
-		if(drawable instanceof BitmapDrawable bd){
-			return new BitmapDrawableWithPalette(bd);
-		}
-		return null;
-	}
+    @Override
+    public Drawable processDrawable(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable bd) {
+            return new BitmapDrawableWithPalette(bd);
+        }
+        return null;
+    }
 
-	@Override
-	public String getMemoryCacheKey(){
-		return "palette";
-	}
+    @Override
+    public String getMemoryCacheKey() {
+        return "palette";
+    }
 }
